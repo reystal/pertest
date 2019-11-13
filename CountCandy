@@ -1,0 +1,39 @@
+// 原式
+// 1. A - B=a
+// 2. B - C=b
+// 3. A + B=c
+// 4. B + C=d
+// 使用代入消元法求出A
+// 5.求出B B=A-a
+// 6.把5结果带入到3中 A+A-a=c
+// 7.求出结果 2A=c+a; A=(c+a)/2
+// 计算A
+//int A = (c + a) / 2;
+// 计算B
+//B=A-a;
+// 计算C
+//C=B-b;
+import java.util.Scanner;
+public class CountCandy 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int d = sc.nextInt();
+
+        int A = (a + c) / 2;
+        int B = A -a;
+        int C = B -b;
+
+        if (B + C == d )
+        {
+            System.out.println(A + " " + B + " " + C);
+            return;
+        }
+        System.out.println("No");
+
+    }
+}
