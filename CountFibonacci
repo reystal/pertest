@@ -1,0 +1,44 @@
+import java.util.*;
+public class Main
+{
+  //取最近距离
+    public static int min(int a,int b)
+    {
+        if(a<b)
+        {
+            return a;
+        }
+        else
+        {
+            return b;
+        }
+    }
+    public static void main(String[]args)
+    {
+        int N,f,l=0;
+        int r=0;
+        int f0=0;
+        int f1=1;
+        Scanner sc=new Scanner(System.in);
+        N=sc.nextInt();
+        while(true)
+        {
+            f=f0+f1;
+            f0=f1;
+            
+            f1=f;
+            //找到比N小且距离N最近的数，求出距离
+            if(f<N)
+            {
+                l=N-f;
+            }
+            else
+            {
+            //找到比N大且距离N最近的数，求出距离
+                r=f-N;
+                break;
+            }
+        }
+        System.out.println(min(l,r));
+    }
+}
